@@ -7,11 +7,10 @@ import 'package:flutter/material.dart';
 
 class CurrencyConverterMaterialPage extends StatefulWidget {
   const CurrencyConverterMaterialPage({super.key});
-  
-@override
+
+  @override
   State<CurrencyConverterMaterialPage> createState() =>
       _CurrencyConverterMaterialPageState();
-  
 }
 
 class _CurrencyConverterMaterialPageState
@@ -19,10 +18,9 @@ class _CurrencyConverterMaterialPageState
   double result = 0;
   final TextEditingController textEditingController = TextEditingController();
 
-
-
   @override
- Widget build(BuildContext context) { //1.create a variable for stores the converted amount
+  Widget build(BuildContext context) {
+    //1.create a variable for stores the converted amount
     return Scaffold(
       backgroundColor: Colors.cyan,
       appBar: AppBar(
@@ -41,7 +39,7 @@ class _CurrencyConverterMaterialPageState
             Text(
               //int ->string integervalue.toString() agr kisi  cheej ko string m convert karna hoga to tostring method call karte hain
               //string -> int int.parse(stringvalue) agr kisi cheej ko int m convert karna hoga to int.parse method call karte hain
-              result.toString(),
+              'INR $result',
               style: TextStyle(
                 fontSize: 50,
                 fontWeight: FontWeight.bold,
@@ -73,10 +71,8 @@ class _CurrencyConverterMaterialPageState
               padding: const EdgeInsets.all(10.0),
               child: ElevatedButton(
                 onPressed: () {
-                  
-                  setState(() {
-                    result = (double.parse(textEditingController.text) * 82);
-                  });
+                  result = (double.parse(textEditingController.text) * 88.75);
+                  setState(() {});
                 },
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.black,
@@ -97,5 +93,3 @@ class _CurrencyConverterMaterialPageState
     );
   }
 }
-
-
